@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="overlay">
+        <div class="results-box">
+            <h1>Search Results</h1>
+            <a href="{{ url_for('index') }}" class="back-button">Back to Search</a>
+            {% if results %}
+                <ul>
+                    {% for result in results %}
+                        <li>{{ result }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No results found for your search.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
